@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from "react-select"
-
+import Btn from "./Btn"
 
 
 function App() {
-
+  const [index, setIndex] = useState(0)
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -25,10 +25,14 @@ function App() {
       // return { ...provided, opacity, transition };
     }
   }
-
+  const changeIndex = () =>{
+    setIndex(index+1)
+  }
   return (
     <div className="App">
-     <h1>yup</h1>
+     <h1>hello</h1>
+     <h2>{index}</h2>
+     <Btn changeIndex={changeIndex} />
      <Select
       styles={customStyles}
       options={[{label:1,},{label:2}]}
